@@ -1,0 +1,367 @@
+{
+    "name": "首页",
+    "action": "portal/Index/index",
+    "description": "首页模板文件",
+    "order": 10.0,
+    "more": {
+        "vars": {
+            "top_slide": {
+                "title": "顶部幻灯片",
+                "value": "1",
+                "type": "text",
+                "dataSource": {
+                    "api": "admin/Slide/index",
+                    "multi": false
+                },
+                "placeholder": "请选择顶部幻灯片",
+                "tip": "顶部幻灯片",
+                "rule": {
+                    "require": true
+                }
+            }
+        },
+        "widgets": {
+            "first_section": {
+                "title": "第一版块",
+                "display": "1",
+                "vars": {
+                    "category_id": {
+                        "title": "文章分类ID",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": false
+                        },
+                        "placeholder": "请选择分类",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "second_section": {
+                "title": "第二版块",
+                "display": "1",
+                "vars": {
+                    "page_id": {
+                        "title": "内容单面ID",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Page/index",
+                            "multi": false
+                        },
+                        "placeholder": "请选择页面",
+                        "tip": "该版块为单页内容，请选择页面",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "btn_display": {
+                        "title": "是否显示下方按钮",
+                        "value": "1",
+                        "type": "select",
+                        "options": {
+                            "1": "显示",
+                            "2": "隐藏"
+                        },
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "btn_title": {
+                        "title": "按钮文字",
+                        "value": "了解详情",
+                        "type": "text",
+                        "tip": "该文字最终显示在按钮上，因此字数不建议超过6个",
+                        "placeholder": "请输入按钮名称"
+                    },
+                    "btn_link": {
+                        "title": "按钮链接",
+                        "value": "javascript:;",
+                        "type": "text",
+                        "tip": "点击按钮后的跳转链接地址，或javascript操作"
+                    }
+                }
+            },
+            "third_section": {
+                "title": "第三版块--选项卡",
+                "display": "1",
+                "vars": {
+                    "news": {
+                        "title": "新闻版块",
+                        "value": [],
+                        "type": "array",
+                        "item": {
+                            "category_id": {
+                                "title": "文章类别ID",
+                                "value": "",
+                                "type": "text",
+                                "dataSource": {
+                                    "api": "portal/Category/index",
+                                    "multi": false
+                                },
+                                "tip": "请选择新闻类别"
+                            },
+                            "count": {
+                                "title": "文章显示数量",
+                                "value": 3,
+                                "type": "number",
+                                "tip": "每个栏目文章数量"
+                            }
+                        }
+                    },
+                    "slide": {
+                        "title": "展示版块",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": false
+                        }
+                    }
+                }
+            },
+            "fourth_section": {
+                "title": "第四版块",
+                "display": "1",
+                "vars": {
+                    "category_id": {
+                        "title": "文章类别ID",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": false
+                        },
+                        "tip": "请选择新闻类别"
+                    },
+                    "count": {
+                        "title": "文章显示最大数量",
+                        "value": 10,
+                        "type": "number",
+                        "tip": "显示文章最大数量"
+                    }
+                }
+            },
+            "fifth_section": {
+                "title": "第五版块",
+                "display": "1",
+                "vars": {
+                    "category_id": {
+                        "title": "分类信息ID集",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": false
+                        },
+                        "tip": "请选择父类别，系统会自动获取下边的子类展示"
+                    }
+                }
+            },
+            "sixth_section": {
+                "title": "友情链接",
+                "display": "1",
+                "vars": {
+                    "section_name": {
+                        "title": "版块名称",
+                        "value": "我们的客户",
+                        "type": "text",
+                        "tip": "显示在友情链接左侧的名称"
+                    },
+                    "excerpt": {
+                        "title": "介绍文字",
+                        "value": "",
+                        "type": "text",
+                        "tip": "版块介绍文字"
+                    }
+                }
+            },
+
+            "advertise_top": {
+                "title": "上部广告图片",
+                "display": "1",
+                "vars": {
+                    "pic_left": {
+                        "title": "上部左广告图",
+                        "value": "",
+                        "type": "image",
+                        "tip": "左广告",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "pic_right": {
+                        "title": "上部右广告图",
+                        "value": "",
+                        "type": "image",
+                        "tip": "右广告",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "advertise_middle": {
+                "title": "中部广告图片",
+                "display": "1",
+                "vars": {
+                    "pic_middle": {
+                        "title": "中部左广告图",
+                        "value": "",
+                        "type": "image",
+                        "tip": "中部广告图",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "advertise_bottom": {
+                "title": "底部广告图片",
+                "display": "1",
+                "vars": {
+                    "pic_bottom": {
+                        "title": "底部广告图",
+                        "value": "",
+                        "type": "image",
+                        "tip": "底部广告图",
+                        "rule": {
+                            "require": true
+                        }
+                    }
+                }
+            },
+            "features": {
+                "title": "快速了解ThinkCMF",
+                "display": "1",
+                "vars": {
+                    "sub_title": {
+                        "title": "副标题",
+                        "value": "Quickly understand the ThinkCMF",
+                        "type": "text",
+                        "placeholder": "请输入副标题",
+                        "tip": "",
+                        "rule": {
+                            "require": true
+                        }
+                    },
+                    "features": {
+                        "title": "特性介绍",
+                        "value": [
+                            {
+                                "title": "MVC分层模式",
+                                "icon": "bars",
+                                "content": "使用MVC应用程序被分成三个核心部件：模型（M）、视图（V）、控制器（C），他不是一个新的概念，只是ThinkCMF将其发挥到了极致。"
+                            },
+                            {
+                                "title": "用户管理",
+                                "icon": "group",
+                                "content": "ThinkCMF内置了灵活的用户管理方式，并可直接与第三方站点进行互联互通，如果你愿意甚至可以对单个用户或群体用户的行为进行记录及分享，为您的运营决策提供有效参考数据。"
+                            },
+                            {
+                                "title": "云端部署",
+                                "icon": "cloud",
+                                "content": "通过驱动的方式可以轻松支持云平台的部署，让你的网站无缝迁移，内置已经支持SAE、BAE，正式版将对云端部署进行进一步优化。"
+                            },
+                            {
+                                "title": "安全策略",
+                                "icon": "heart",
+                                "content": "提供的稳健的安全策略，包括备份恢复，容错，防治恶意攻击登陆，网页防篡改等多项安全管理功能，保证系统安全，可靠，稳定的运行。"
+                            },
+                            {
+                                "title": "应用模块化",
+                                "icon": "cubes",
+                                "content": "提出全新的应用模式进行扩展，不管是你开发一个小功能还是一个全新的站点，在ThinkCMF中你只是增加了一个APP，每个独立运行互不影响，便于灵活扩展和二次开发。"
+                            },
+                            {
+                                "title": "免费开源",
+                                "icon": "certificate",
+                                "content": "代码遵循Apache2开源协议，免费使用，对商业用户也无任何限制。"
+                            }
+                        ],
+                        "type": "array",
+                        "item": {
+                            "title": {
+                                "title": "标题",
+                                "value": "",
+                                "type": "text",
+                                "rule": {
+                                    "require": true
+                                }
+                            },
+                            "icon": {
+                                "title": "图标",
+                                "value": "",
+                                "type": "text"
+                            },
+                            "content": {
+                                "title": "描述",
+                                "value": "",
+                                "type": "textarea"
+                            }
+                        },
+                        "tip": ""
+
+                    }
+                }
+            },
+            "more_section": {
+                "title": "名单板块",
+                "display": "1",
+                "vars": {
+                    "category_id": {
+                        "title": "分类信息ID集",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": false
+                        },
+                        "tip": "请选择父类别，系统会自动获取下边的子类展示"
+                    }
+                }
+            },
+            "third_section": {
+                "title": "第三版块--选项卡",
+                "display": "1",
+                "vars": {
+                    "news": {
+                        "title": "新闻版块",
+                        "value": [],
+                        "type": "array",
+                        "item": {
+                            "category_id": {
+                                "title": "文章类别ID",
+                                "value": "",
+                                "type": "text",
+                                "dataSource": {
+                                    "api": "portal/Category/index",
+                                    "multi": false
+                                },
+                                "tip": "请选择新闻类别"
+                            },
+                            "count": {
+                                "title": "文章显示数量",
+                                "value": 3,
+                                "type": "number",
+                                "tip": "每个栏目文章数量"
+                            }
+                        }
+                    },
+                    "slide": {
+                        "title": "展示版块",
+                        "value": "",
+                        "type": "text",
+                        "dataSource": {
+                            "api": "portal/Category/index",
+                            "multi": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
