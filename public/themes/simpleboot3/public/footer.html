@@ -1,38 +1,64 @@
-<br>
 <!-- Footer ================================================== -->
-<hr>
-<div id="footer">
-    <hook name="footer_start"/>
-    <div class="links">
-        <links>
-            <a href="{$vo.url|default=''}" target="{$vo.target|default=''}">{$vo.name|default=''}</a>&nbsp;
-        </links>
-
+<div id="foot">
+    <div id="footer">
+        <hook name="footer_start" />
+        <div class="links">
+            <p>友情连接:</p>
+            <links>
+                <a  href="{$vo.url|default=''}" target="{$vo.target|default=''}">{$vo.name|default=''}</a>
+            </links>
+        </div>
+        <div class="message">
+            <div class="first">
+                <notempty name="site_info.website_copyright_infomation">
+                    <p>{$site_info.website_copyright_infomation}</p>
+                    <else />
+                    请在后台设置"网站信息"设置
+                </notempty>
+                <notempty name="site_info.site_icp">
+                    <a class="icp" href="https://beian.miit.gov.cn/" target="_blank" style="color: #666666;" >{$site_info.site_icp}
+                    </a>
+                    <else />
+                </notempty>
+                <notempty name="site_info.admin_support">
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;技术支持：{$site_info.admin_support}</p>
+                    <else />
+                    请在后台设置"网站信息"设置
+                </notempty>
+            </div>
+            <div class="second">
+                <notempty name="site_info.admin_phone">
+                    <p>电话：{$site_info.admin_phone}</p>
+                    <else />
+                    请在后台设置"网站信息"设置
+                </notempty>
+                <notempty name="site_info.site_admin_email">
+                    <p> &nbsp;&nbsp;&nbsp;&nbsp;邮箱：{$site_info.site_admin_email}</p>
+                    <else />
+                    请在后台设置"网站信息"设置
+                </notempty>
+            </div>
+            <div class="third">
+                <notempty name="site_info.admin_address">
+                    <p>地址：{$site_info.admin_address}</p>
+                    <else />
+                    请在后台设置"网站信息"设置
+                </notempty>
+                <div>
+                    <notempty name="site_info.admin_icon_img1">
+                        <img src="/upload{$site_info.admin_icon_img1}" alt="">
+                        <else />
+                        <img src="__TMPL__/public/assets/images/logo-spaq-s.png" alt="">
+                    </notempty>
+                    <notempty name="site_info.admin_icon_img2">
+                        <img src="/upload{$site_info.admin_icon_img2}" alt="">
+                        <else />
+                        <img src="__TMPL__/public/assets/images/logo-jm.png" alt="">
+                    </notempty>
+                </div>
+            </div>
+        </div>
     </div>
-    <p>
-        Made by <a href="http://www.thinkcmf.com" target="_blank">ThinkCMF</a>
-        Code licensed under the
-        <a href="http://www.apache.org/licenses/LICENSE-2.0" rel="nofollow" target="_blank">Apache License v2.0</a>.
-        <br/>
-        Based on
-        <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>.
-        Icons from
-        <a href="http://fortawesome.github.com/Font-Awesome/" target="_blank">Font Awesome</a>
-        <br>
-        <notempty name="site_info.site_icp">
-            <a href="http://www.miitbeian.gov.cn/" target="_blank">{$site_info.site_icp}</a>
-            <else/>
-            请在后台设置"网站信息"设置"ICP备"
-        </notempty>
-        <notempty name="site_info.site_gwa">
-            <img src="__TMPL__/public/assets/images/ghs.png">
-            <a href="http://beian.gov.cn/" target="_blank">{$site_info.site_gwa}</a>
-            <else/>
-            请在后台设置"网站信息"设置"公网安备"
-        </notempty>
-
-
-    </p>
 </div>
 <div id="backtotop">
     <i class="fa fa-arrow-circle-up"></i>

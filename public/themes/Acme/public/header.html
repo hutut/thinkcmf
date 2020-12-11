@@ -18,34 +18,34 @@
         </div>
 
         <div class="navbar-collapse collapse">
-            <!--登录部分-->
-<!--            <ul id="main-menu-user" class="nav navbar-nav navbar-right">-->
-<!--                <li class="dropdown user login">-->
-<!--                    <a class="dropdown-toggle user" data-toggle="dropdown" href="#">-->
-<!--                        <php>$user=cmf_get_current_user();</php>-->
-<!--                        <if condition="empty($user['avatar'])">-->
-<!--                            <img src="__TMPL__/public/assets/img/headicon.png" class="headicon">-->
-<!--                            <else/>-->
-<!--                            <img src="{:cmf_get_user_avatar_url($user['avatar'])}" class="headicon" width="30"/>-->
-<!--                        </if>-->
-<!--                        <span class="user-nickname"></span><b class="caret"></b>-->
-<!--                    </a>-->
-<!--                    <ul class="dropdown-menu pull-right">-->
-<!--                        <li><a href="{:cmf_url('user/Profile/center')}"><i class="fa fa-user"></i> &nbsp;个人中心</a></li>-->
-<!--                        <li><a href="{:cmf_url('user/Index/logout')}"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                <li class="dropdown user offline">-->
-<!--                    <a class="dropdown-toggle user" data-toggle="dropdown" href="#">-->
-<!--                        <img src="__TMPL__/public/assets/img/headicon.png" class="headicon">-->
-<!--                        登录<b class="caret"></b>-->
-<!--                    </a>-->
-<!--                    <ul class="dropdown-menu pull-right">-->
-<!--                        <li><a href="{:cmf_url('user/Login/index')}"><i class="fa fa-sign-in"></i> &nbsp;登录</a></li>-->
-<!--                        <li><a href="{:cmf_url('user/Register/index')}"><i class="fa fa-user"></i> &nbsp;注册</a></li>-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
+<!--            登录部分-->
+            <ul id="main-menu-user" class="nav navbar-nav navbar-right">
+                <li class="dropdown user login">
+                    <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
+                        <php>$user=cmf_get_current_user();</php>
+                        <if condition="empty($user['avatar'])">
+                            <img src="__TMPL__/public/assets/img/headicon.png" class="headicon">
+                            <else/>
+                            <img src="{:cmf_get_user_avatar_url($user['avatar'])}" class="headicon" width="30"/>
+                        </if>
+                        <span class="user-nickname"></span><b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="{:cmf_url('user/Profile/center')}"><i class="fa fa-user"></i> &nbsp;个人中心</a></li>
+                        <li><a href="{:cmf_url('user/Index/logout')}"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown user offline">
+                    <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
+                        <img src="__TMPL__/public/assets/img/headicon.png" class="headicon">
+                        登录<b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="{:cmf_url('user/Login/index')}"><i class="fa fa-sign-in"></i> &nbsp;登录</a></li>
+                        <li><a href="{:cmf_url('user/Register/index')}"><i class="fa fa-user"></i> &nbsp;注册</a></li>
+                    </ul>
+                </li>
+            </ul>
 
             <!--导航部分-->
             <ul id="main-menu" class="nav navbar-nav">

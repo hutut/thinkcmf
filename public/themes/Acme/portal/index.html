@@ -110,9 +110,6 @@
                                                              field="post.id,category_id,post_title,post_excerpt,published_time,more"
                                                              categoryIds="$cats">
                                                 <article class="media">
-                                                    <!--                                                    <a class="pull-left thumb p-thumb">-->
-                                                    <!--                                                        <img src="{$vo.more.thumbnail|default='__TMPL__/public/assets/img/newsicon.jpg'|cmf_get_image_url}">-->
-                                                    <!--                                                    </a>-->
                                                     <a href="#"><i class="fa fa-time"></i>{:date('Y-m-d H:i', $vo.published_time)} </a>
                                                     <div class="media-body b-btm">
                                                         <a href="{:cmf_url('portal/Article/index', ['id'=>$vo.id,'cid'=>$vo.category_id])}"
@@ -169,7 +166,7 @@
 <!--                                    </div>-->
                                     <div class="h-service-content wow fadeInUp" style="height: 20px">
                                         <span style="font-size: large;color: #0B90C4;float: left">{$vo.name}</span>
-                                        <a style="float: right" href="{:cmf_url('portal/List/index', ['id'=>$widget['vars']['category_id']])}">更多>></a>
+                                        <a style="float: right" href="{:cmf_url('portal/list/index',['id'=>$vo.id])}">更多>></a>
                                     </div>
                                     <div align="left" style="height: 10px"></div>
 
@@ -180,7 +177,9 @@
                                             <article class="media">
 <!--                                                <a href="#"><i class="fa fa-time"></i>{:date('Y-m-d H:i', $vo.published_time)} </a>-->
                                                 <div class="media-body b-btm">
-                                                    <a href="{:cmf_url('portal/Article/index', ['id'=>$vo.id,'cid'=>$vo.category_id])}"
+                                                    {$vo.id}
+                                                    {$vo.category_id}
+                                                    <a href="{:cmf_url('portal/article/index', ['id'=>$vo.id,'cid'=>$vo.category_id])}"
                                                        class=" ">      <i style="color: red">&nbsp;&nbsp;{$key+1}&nbsp;:&nbsp;</i>  {$vo.post_title} </a>
 <!--                                                    <p>{$vo.post_excerpt}</p>-->
                                                 </div>
@@ -380,15 +379,11 @@
                         <portal:subCategories categoryId="$widget.vars.category_id" item="vo">
                             <div class="col-md-4">
                                 <div class="h-service">
-                                    <!--                                    <div class="icon-wrap round-fifty wow fadeInDown">-->
-                                    <!--                                        <img src="{$vo.more.thumbnail|cmf_get_image_url}" class="img-responsive">-->
-                                    <!--                                    </div>-->
                                     <div class="h-service-content wow fadeInUp" style="height: 20px">
                                         <span style="font-size: large;color: #0B90C4;float: left">{$vo.name}</span>
                                         <a style="float: right" href="{:cmf_url('portal/List/index', ['id'=>$vo.id])}">更多>></a>
                                     </div>
                                     <div align="left" style="height: 10px"></div>
-
                                     <div align="left">
                                         <portal:articles limit="6" order="post.published_time DESC"
                                                          field="post.id,category_id,post_title,post_excerpt,published_time,more"
